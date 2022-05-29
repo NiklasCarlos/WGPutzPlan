@@ -21,11 +21,11 @@
             <form method="post" action= "https://script.google.com/macros/s/AKfycbxkBlGDYwV0UQftCgsX2o-E3IjNfFNHeKLk90vx2AXbyAtP-aaQqKnGy7GpdJLt7Dsj/exec">
                
                 <div class="row form-group">
-                    <label class="col-2 col-form-label" for="name">
+                    <label class="col col-form-label" for="name" >
                         Name:
                     </label>
                     <div class="col">
-                        <input type="text" name="Name" id="name" placeholder="Name" class="form-control">
+                        <input type="text" name="Name" id="name" placeholder="Name eintragen" class="form-control" required>
                     </div>
                 </div>
 				
@@ -33,7 +33,7 @@
 				
 				
                 <div class="row form-group">
-                    <label class="col-2 col-form-label" for="ort">
+                    <label class="col col-form-label" for="ort">
                         Ort:
                     </label>
                     <div class="col">
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="row form-group">
-                    <label class="col-2 col-form-label" for="message">
+                    <label class="col col-form-label" for="message">
                         Nachricht:
                     </label>
                     <div class="col">
@@ -55,11 +55,13 @@
                     </div>
                 </div>
                 <div class="row form-check">
-                    <div class="offset-2 col">
-                        <input type="checkbox" name="robot" id="robot" class="form-check-input">
+                    <div class="col">
+                        <input type="checkbox" name="robot" id="robot" class="form-check-input" required>
                         <label for="robot" class="form-check-label">Hiermit bestätige ich, dass ich ein Roboter bin.</label>
                     </div>
                 </div>
+
+				<br>
 
 				<button class="btn btn-primary">Anfrage senden</button>
             </form>
@@ -255,6 +257,10 @@
 			changeSortParam: function(sortParam) {
 				this.sortparam = sortParam;
 				this.order = this.order * (-1);
+			},
+
+			logError: function() {
+				console.log("check nötig")
 			}
 		}
 	}).mount('#app');
